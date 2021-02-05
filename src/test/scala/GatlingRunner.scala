@@ -1,4 +1,4 @@
-import gatling.demo.{CheckJsonPathScenario, CodeReuseScenario, CsvFeeder, DemoScenario, SimpleCustomFeeder, UseQueryContextScenario}
+import gatling.demo.{CheckJsonPathScenario, CodeReuseScenario, CsvFeeder, DemoScenario, PostWithCustomFeeder, SimpleCustomFeeder, UseQueryContextScenario}
 import io.gatling.app.Gatling
 import io.gatling.core.config.GatlingPropertiesBuilder
 
@@ -10,7 +10,7 @@ import io.gatling.core.config.GatlingPropertiesBuilder
 object GatlingRunner {
 
 	def main(args: Array[String]): Unit = {
-		val simClass = classOf[SimpleCustomFeeder].getName
+		val simClass = classOf[PostWithCustomFeeder].getName
 		val props = new GatlingPropertiesBuilder
 		props.simulationClass(simClass)
 
