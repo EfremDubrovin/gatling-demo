@@ -11,15 +11,19 @@ import scala.concurrent.duration.DurationInt
 class CodeReuseScenario extends Simulation {
 
 	def getAllVideoGames() = {
-		exec(http("Get all video games")
-			.get("videogames")
-			.check(status.is(200)))
+		repeat(3) {
+			exec(http("Get all video games")
+				.get("videogames")
+				.check(status.is(200)))
+		}
 	}
 
 	def getASpecificVideoGame() = {
-		exec(http("Get specific video game")
-			.get("videogames/1")
-			.check(status.in(200, 210)))
+		repeat(5) {
+			exec(http("Get specific video game")
+				.get("videogames/1")
+				.check(status.in(200, 210)))
+		}
 	}
 
 	val scn = scenario("Video game DB")
