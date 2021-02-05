@@ -1,4 +1,4 @@
-import gatling.demo.{CheckJsonPathScenario, DemoScenario}
+import gatling.demo.{CheckJsonPathScenario, DemoScenario, UseQueryContextScenario}
 import io.gatling.app.Gatling
 import io.gatling.core.config.GatlingPropertiesBuilder
 
@@ -10,7 +10,7 @@ import io.gatling.core.config.GatlingPropertiesBuilder
 object GatlingRunner {
 
 	def main(args: Array[String]): Unit = {
-		val simClass = classOf[CheckJsonPathScenario].getName
+		val simClass = classOf[UseQueryContextScenario].getName
 		val props = new GatlingPropertiesBuilder
 		props.simulationClass(simClass)
 
