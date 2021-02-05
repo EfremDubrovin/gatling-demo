@@ -43,6 +43,9 @@
 				<artifactId>gatling-maven-plugin</artifactId>
 				<version>${gatling-maven-plugin.version}</version>
 				<configuration>
+					<includes>
+						<include>gatling.demo.*</include>
+					</includes>
 					<runMultipleSimulations>true</runMultipleSimulations>
 					<compilerJvmArgs>
 						<compilerJvmArg>-Xmx512m</compilerJvmArg>
